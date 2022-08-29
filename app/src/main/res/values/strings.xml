@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kotlin Speech Features</string>
+    <string name="hint">This demo loads a wav file from the asset directory and processes the audio signal using the four methods below. To see it in action, just click one of the method buttons and the results will be printed in logcat. More details in https://github.com/XioResearchInterGalactic/kotlin_speech_features.</string>
 </resources>

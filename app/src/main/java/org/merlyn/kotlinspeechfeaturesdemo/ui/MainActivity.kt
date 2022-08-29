@@ -1,12 +1,9 @@
 package org.merlyn.kotlinspeechfeaturesdemo.ui
 
-import android.Manifest
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import org.merlyn.kotlinspeechfeaturesdemo.R
 
@@ -18,23 +15,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        ssc.setOnClickListener {
-            Toast.makeText(this, "SSC called", Toast.LENGTH_LONG).show()
+        cardSsc.setOnClickListener {
+            Toast.makeText(this, "SSC called. Check logcat.", Toast.LENGTH_LONG).show()
             viewModel.performSsc()
         }
 
-        mfcc.setOnClickListener {
-            Toast.makeText(this, "MFCC called", Toast.LENGTH_LONG).show()
+        cardMfcc.setOnClickListener {
+            Toast.makeText(this, "MFCC called. Check logcat.", Toast.LENGTH_LONG).show()
             viewModel.performMfcc()
         }
 
-        fbank.setOnClickListener {
-            Toast.makeText(this, "FBANK called", Toast.LENGTH_LONG).show()
+        cardFbank.setOnClickListener {
+            Toast.makeText(this, "FBANK called. Check logcat.", Toast.LENGTH_LONG).show()
             viewModel.performFbank()
         }
 
-        logfbank.setOnClickListener {
-            Toast.makeText(this, "LOGFBANK called", Toast.LENGTH_LONG).show()
+        cardLogFbank.setOnClickListener {
+            Toast.makeText(this, "LOGFBANK called. Check logcat.", Toast.LENGTH_LONG).show()
             viewModel.performLogfbank()
         }
     }
