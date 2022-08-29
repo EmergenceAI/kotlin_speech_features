@@ -1,5 +1,6 @@
 package org.merlyn.kotlinspeechfeatures
 
+import kotlinx.coroutines.runBlocking
 import org.merlyn.kotlinspeechfeatures.fft.FFT
 import org.merlyn.kotlinspeechfeatures.fft.KotlinFFT
 import kotlin.math.*
@@ -149,17 +150,19 @@ class SignalProc(private val fft: FFT = KotlinFFT()) {
      * @param nfft the FFT length to use. If NFFT > frame_len, the frames are zero-padded.
      * @return If frames is an NxD matrix, output will be Nx(NFFT/2+1). Each row will be the magnitude spectrum of the corresponding frame.
      */
-    suspend fun magspec(frames : Array<FloatArray>, nfft : Int): Array<FloatArray> {
+    fun magspec(frames : Array<FloatArray>, nfft : Int): Array<FloatArray> {
         val frameWidth = frames[0].size
         val mspec = Array(frames.size) { FloatArray(frameWidth) }
-        frames.asyncForEachIndexed { index, frame ->
-            val absOutput = ArrayList<Float>(frameWidth+2)
-            val input = frame + FloatArray(nfft-frameWidth) // pad tail with zeros to return accurate dimensions (dims: 512,)
-            val result = fft.rfft(input, nfft).toList()
-            absOutput.addAll(result.subList(0, result.size/2-1).map {
-                modul(it.re().toFloat(), it.im().toFloat())
-            })
-            mspec[index] = absOutput.toFloatArray()
+        runBlocking {
+            frames.asyncForEachIndexed { index, frame ->
+                val absOutput = ArrayList<Float>(frameWidth+2)
+                val input = frame + FloatArray(nfft-frameWidth) // pad tail with zeros to return accurate dimensions (dims: 512,)
+                val result = fft.rfft(input, nfft).toList()
+                absOutput.addAll(result.subList(0, result.size/2-1).map {
+                    modul(it.re().toFloat(), it.im().toFloat())
+                })
+                mspec[index] = absOutput.toFloatArray()
+            }
         }
         return mspec
     }
@@ -170,15 +173,17 @@ class SignalProc(private val fft: FFT = KotlinFFT()) {
      * @param nfft the FFT length to use. If NFFT > frame_len, the frames are zero-padded.
      * @return If frames is an NxD matrix, output will be Nx(NFFT/2+1). Each row will be the power spectrum of the corresponding frame.
      */
-    suspend fun powspec(frames: Array<FloatArray>, nfft: Int): Array<FloatArray> {
+    fun powspec(frames: Array<FloatArray>, nfft: Int): Array<FloatArray> {
         val fftOut = nfft / 2 + 1
         val mspec = magspec(frames, nfft)
         val pspec = Array(mspec.size) { FloatArray(fftOut)}
 
         // Compute the power spectrum
-        frames.asyncForEachIndexed { frameIndex, _ ->
-            for ((index, element) in mspec[frameIndex].withIndex()){
-                pspec[frameIndex][index] = (1.0f/nfft * element.toDouble().pow(2.0)).toFloat()
+        runBlocking {
+            frames.asyncForEachIndexed { frameIndex, _ ->
+                for ((index, element) in mspec[frameIndex].withIndex()){
+                    pspec[frameIndex][index] = (1.0f/nfft * element.toDouble().pow(2.0)).toFloat()
+                }
             }
         }
         return pspec
@@ -210,7 +215,7 @@ class SignalProc(private val fft: FFT = KotlinFFT()) {
      * @return If frames is an NxD matrix, output will be Nx(NFFT/2+1). Each row will be the log
      * power spectrum of the corresponding frame.
      */
-    suspend fun logpowspec(
+    fun logpowspec(
         frames: Array<FloatArray>,
         nfft: Int,
         norm: Boolean = true
@@ -235,7 +240,7 @@ class SignalProc(private val fft: FFT = KotlinFFT()) {
             lps
         }
     }
-    
+
     private fun modul(r: Float, i: Float): Float {
         return if (r != 0.0f || i != 0.0f) {
             sqrt(r * r + i * i)

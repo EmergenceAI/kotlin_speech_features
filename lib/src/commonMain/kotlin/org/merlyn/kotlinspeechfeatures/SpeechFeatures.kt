@@ -1,5 +1,6 @@
 package org.merlyn.kotlinspeechfeatures
 
+import kotlinx.coroutines.runBlocking
 import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.calcEnergy
 import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.calcFeat
 import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.dct2withLifter
@@ -32,7 +33,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
      * @param winFunc the analysis window to apply to each frame. By default no window is applied.
      * @return An array of size (NUMFRAMES by numcep) containing features. Each row holds 1 feature vector.
      */
-    suspend fun mfcc(
+    fun mfcc(
         signal: FloatArray,
         sampleRate: Int = 16000,
         winLen: Float = 0.025f,
@@ -60,13 +61,15 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
             preemph,
             winFunc
         )
-        val logFeat = floatArrayLog(feat)
-        val lifterDctFeat = dct2withLifter(
-            feat=logFeat,
-            aNCep = numCep,
-            aNFilters = nFilt,
-            ceplifter=ceplifter
-        )
+        val logFeat = runBlocking { floatArrayLog(feat) }
+        val lifterDctFeat = runBlocking {
+            dct2withLifter(
+                feat=logFeat,
+                aNCep = numCep,
+                aNFilters = nFilt,
+                ceplifter=ceplifter
+            )
+        }
         if (appendEnergy){ // replace first cepstral coefficient with log of frame energy
             for ((index, eng) in energy.withIndex()){
                 lifterDctFeat[index][0] = ln(eng)
@@ -89,7 +92,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
      * @param winFunc the analysis window to apply to each frame. By default no window is applied.
      * @return 2 values. The first is an array of size (NUMFRAMES by nfilt) containing features. Each row holds 1 feature vector. The second return value is the energy in each frame (total energy, unwindowed)
      */
-    suspend fun fbank(
+    fun fbank(
         signal: FloatArray,
         sampleRate: Int=16000,
         winLen: Float=0.025f,
@@ -110,10 +113,13 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
             frameStep = frameStep,
             winFunc = winFunc
         )
-        val pspec = signalProc.powspec(frames, nfft)
-        val energy = calcEnergy(pspec) // stores the total energy in each frame.
-        val fb = getFilterBanks(nFilt, nfft, sampleRate, lowFreq, highFreq)
-        val feat = calcFeat(pspec, fb)
+        val (feat, energy) = runBlocking {
+            val pspec = signalProc.powspec(frames, nfft)
+            val energy = calcEnergy(pspec) // stores the total energy in each frame.
+            val fb = getFilterBanks(nFilt, nfft, sampleRate, lowFreq, highFreq)
+            val feat = calcFeat(pspec, fb)
+            return@runBlocking feat to energy
+        }
         return Pair(feat, energy)
     }
 
@@ -131,7 +137,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
      * @param winFunc the analysis window to apply to each frame. By default no window is applied.
      * @return An array of size (NUMFRAMES by nFilt) containing features. Each row holds 1 feature vector.
      */
-    suspend fun logfbank(
+    fun logfbank(
         signal: FloatArray,
         sampleRate: Int = 16000,
         winLen: Float = 0.025f,
@@ -155,7 +161,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
             preemph,
             winFunc
         )
-        return floatArrayLog(feat)
+        return runBlocking { floatArrayLog(feat) }
     }
 
     /**
@@ -244,7 +250,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
      * @param winFunc the analysis window to apply to each frame. By default no window is applied. You can use numpy window functions here e.g. winfunc=numpy.hamming
      * @return An array of size (NUMFRAMES by nfilt) containing features. Each row holds 1 feature vector.
      */
-    suspend fun ssc(
+    fun ssc(
         signal: FloatArray,
         sampleRate: Int = 16000,
         winLen: Float = 0.025f,
@@ -259,7 +265,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
         val highFreq2: Int = highFreq ?: (sampleRate / 2)
         val signal2 = signalProc.preemphasis(signal, preemph)
         val frames = signalProc.framesig(signal2, (winLen * sampleRate).roundToInt(), (winStep * sampleRate).roundToInt(), winFunc)
-        val pspec = signalProc.powspec(frames, nfft)
+        val pspec = runBlocking { signalProc.powspec(frames, nfft) }
         val pspec2 = pspec.map { row ->
             row.map { element ->
                 if (element == 0.0f) {
@@ -269,10 +275,10 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
             }.toFloatArray()
         }.toTypedArray()
         val fb = getFilterBanks(nFilt, nfft, sampleRate, lowFreq, highFreq2)
-        val feat = calcFeat(pspec2, fb)
+        val feat = runBlocking { calcFeat(pspec2, fb) }
         val x = linspace(1.0, sampleRate/2.0, pspec2[0].size.toDouble())
         val r = MathUtils.tile(x.map { it.toFloat() }.toFloatArray(), pspec2.size, 1)
-        return dot2d(pspec2 * r, transpose(fb)) / feat
+        return runBlocking { dot2d(pspec2 * r, transpose(fb)) / feat }
     }
 
     /**
@@ -291,7 +297,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
      * @param n For each frame, calculate delta features based on preceding and following N frames
      * @returns An array of size (NUMFRAMES by number of features) containing delta features. Each row holds 1 delta feature vector.
      */
-    suspend fun delta(feat: FloatArray, n: Int): Array<FloatArray> {
+    fun delta(feat: FloatArray, n: Int): Array<FloatArray> {
         if (n < 1) {
             throw IllegalArgumentException("N must be an integer >= 1")
         }
@@ -303,7 +309,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
         }
         val x = (-n..n+1).map { it.toFloat() }.toFloatArray()
         for (t in 0 until numFrames) {
-            val y = dot2d(arrayOf(x), padded.toList().subList(t, t+2*n+1).toTypedArray())[0] / denominator
+            val y = runBlocking { dot2d(arrayOf(x), padded.toList().subList(t, t+2*n+1).toTypedArray())[0] / denominator }
             deltaFeat.add(y)
         }
         return deltaFeat.toTypedArray()
