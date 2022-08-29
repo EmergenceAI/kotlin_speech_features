@@ -1,4 +1,4 @@
-package com.xio.kotlin_speech_features
+package org.merlyn.kotlinspeechfeaturesdemo
 
 import org.junit.Test
 
