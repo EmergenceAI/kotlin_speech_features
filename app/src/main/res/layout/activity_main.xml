@@ -6,13 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/logfbank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="logfbank"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/fbank" />
 
+    <Button
+        android:id="@+id/mfcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mfcc"
+        app:layout_constraintStart_toStartOf="@+id/ssc"
+        app:layout_constraintTop_toBottomOf="@+id/ssc" />
+
+    <Button
+        android:id="@+id/fbank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fbank"
+        app:layout_constraintStart_toStartOf="@+id/mfcc"
+        app:layout_constraintTop_toBottomOf="@+id/mfcc" />
+
+    <Button
+        android:id="@+id/ssc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="259dp"
+        android:text="ssc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/logfbank" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="164dp"
+        android:text="Click button and Check logcat for Output features"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
