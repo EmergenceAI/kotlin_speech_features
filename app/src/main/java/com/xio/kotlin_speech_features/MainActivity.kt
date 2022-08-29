@@ -8,4 +8,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+//    TODO: Create buttons for internal function calls
+//    TODO: Load sample test audio
+//    TODO:
 }
