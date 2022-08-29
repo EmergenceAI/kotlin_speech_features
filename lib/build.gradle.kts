@@ -13,8 +13,8 @@ kotlin {
     iosSimulatorArm64()
 
     cocoapods {
-        summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
+        summary = "This library provides common speech features for ASR including MFCCs and filterbank energies."
+        homepage = "https://github.com/XioResearchInterGalactic/kotlin_speech_features"
         ios.deploymentTarget = "14.1"
         framework {
             baseName = "KotlinSpeechFeatures"

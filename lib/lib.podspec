@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'lib'
     spec.version                  = '1.0'
-    spec.homepage                 = 'Link to the Shared Module homepage'
+    spec.homepage                 = 'https://github.com/XioResearchInterGalactic/kotlin_speech_features'
     spec.source                   = { :http=> ''}
     spec.authors                  = ''
     spec.license                  = ''
-    spec.summary                  = 'Some description for the Shared Module'
+    spec.summary                  = 'This library provides common speech features for ASR including MFCCs and filterbank energies.'
     spec.vendored_frameworks      = 'build/cocoapods/framework/KotlinSpeechFeatures.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target = '14.1'

@@ -13,6 +13,6 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
     }
 }
-rootProject.name = "kotlinspeechfeatures"
+rootProject.name = "Kotlin Speech Features"
 include ':app'
 include ':lib'
