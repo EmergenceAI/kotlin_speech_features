@@ -6,8 +6,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.merlyn.kotlinspeechfeatures.MathUtils
 import org.merlyn.kotlinspeechfeatures.SpeechFeatures
-import org.merlyn.kotlinspeechfeaturesdemo.common.MathUtils
 import org.merlyn.kotlinspeechfeaturesdemo.common.WavFile
 import java.io.File
 

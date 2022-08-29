@@ -4,6 +4,36 @@ import kotlin.math.*
 
 class MathUtils {
     companion object {
+
+        fun stdev(numArray: DoubleArray): Double {
+            var sum = 0.0
+            var standardDeviation = 0.0
+
+            for (num in numArray) {
+                sum += num
+            }
+
+            val mean = sum / numArray.size
+
+            for (num in numArray) {
+                standardDeviation += (num - mean).pow(2.0)
+            }
+
+            return sqrt(standardDeviation / numArray.size)
+        }
+
+        fun normalize(sig: IntArray): FloatArray {
+            val std = stdev(sig.map { it.toDouble() }.toDoubleArray())
+            val mean = sig.sum() / sig.size
+            val normalizedResponse = FloatArray(sig.size)
+            if (std != 0.0) {
+                for ((index,element) in sig.withIndex()){
+                    normalizedResponse[index] = ((element - mean) / std).toFloat()
+                }
+            }
+            return normalizedResponse
+        }
+
         suspend fun floatArrayLog(feat:Array<FloatArray>): Array<FloatArray> {
             var logfeat = Array(feat.size) { FloatArray (feat[0].size)}
             feat.asyncForEachIndexed { i, row ->
