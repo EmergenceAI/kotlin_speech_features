@@ -1,26 +1,25 @@
-<h1 align="center">
+<div align='center'>
+
+<h1 align="left">
 Kotlin Speech Features
 </h1>
 
 
-
-<center>
-<img src="https://img.shields.io/badge/version-0.1.0-FDD835?style=for-the-badge">
-<img src="https://img.shields.io/badge/Kotlin-1.7.10-blue?style=for-the-badge&logo=kotlin">
-<img src="https://img.shields.io/badge/license-MIT-chlorine?style=for-the-badge">
+<img src="https://img.shields.io/badge/version-0.1.0-FDD835?style=for-the-badge"></img><img src="https://img.shields.io/badge/Kotlin-1.7.10-blue?style=for-the-badge&logo=kotlin"></img><img src="https://img.shields.io/badge/license-MIT-chlorine?style=for-the-badge"></img>
 
 <!-- <img style="background-color: white;" src="https://assets.website-files.com/627028e6193b2d840a066eab/627028e6193b2d86cd066ee0_MM%20Logo.svg" loading="lazy" > -->
 </center>
 
 ---
-<center>
-<h3>Quick Links</h3>
+
+<h3 align="left">Quick Links</h3>
 
 
 <a href="https://merlyn.org"><img src="https://img.shields.io/badge/home-ff7300?style=for-the-badge"></a>
 <a href="https://merlyn.org"><img src="https://img.shields.io/badge/Docs-2196F3?style=for-the-badge"></a>
 
-</center>
+</div>
+
 
 
 # 📒 Introduction
