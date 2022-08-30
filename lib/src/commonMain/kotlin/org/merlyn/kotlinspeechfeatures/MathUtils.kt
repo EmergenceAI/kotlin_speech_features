@@ -141,9 +141,9 @@ class MathUtils {
         }
 
         private fun multipliedSum(v1:FloatArray, v2: FloatArray): Float {
-            var result: Float = 0.0f
-            for (i in 0 until v1.size){
-                var product = v1[i]*v2[i]
+            var result = 0.0f
+            for (i in v1.indices){
+                val product = v1[i]*v2[i]
                 result += product
             }
             return result
@@ -155,10 +155,13 @@ class MathUtils {
             //    v1: pspec : (2,257)
             //    v2: fbT   : (257,26)
 
-            val response : Array<FloatArray> = Array(v1.size) { FloatArray(v2.size)}
-            v1.asyncForEachIndexed { i, v1Value ->
-                for (j in v2.indices) {
-                    response[i][j] = multipliedSum(v1Value, v2[j])
+            val v2T = transpose(v2)
+            val response : Array<FloatArray> = Array(v1.size) { FloatArray(v2[0].size)}
+            for (i in v1.indices) {
+                val x1 = v1[i]
+                for (j in v2T[0].indices) {
+                    val x2 = v2T.map { it[j] }.toFloatArray()
+                    response[i][j] = multipliedSum(x1, x2)
                 }
             }
             return response
