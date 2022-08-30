@@ -1,12 +1,45 @@
-# Kotlin Speech Features
+<h1 align="center">
+Kotlin Speech Features
+</h1>
 
-This library provides common speech features for Automated speech recognition (ASR) including MFCCs and filterbank energies. If you are not sure what MFCCs are, and would like to know more have a look at this [MFCC tutorial](http://www.practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/).
 
-This library is a complete port of [python_speech_features](https://github.com/jameslyons/python_speech_features) in pure Kotlin. It can be used both in Android/java projects and iOS projects.
 
-## Installation
+<center>
+<img src="https://img.shields.io/badge/version-0.1.0-FDD835?style=for-the-badge">
+<img src="https://img.shields.io/badge/Kotlin-1.7.10-blue?style=for-the-badge&logo=kotlin">
+<img src="https://img.shields.io/badge/license-MIT-chlorine?style=for-the-badge">
 
-### Kotlin/Android/JVM
+<!-- <img style="background-color: white;" src="https://assets.website-files.com/627028e6193b2d840a066eab/627028e6193b2d86cd066ee0_MM%20Logo.svg" loading="lazy" > -->
+</center>
+
+---
+<center>
+<h3>Quick Links</h3>
+
+
+<a href="https://merlyn.org"><img src="https://img.shields.io/badge/home-ff7300?style=for-the-badge"></a>
+<a href="https://merlyn.org"><img src="https://img.shields.io/badge/Docs-2196F3?style=for-the-badge"></a>
+
+</center>
+
+
+# 📒 Introduction
+<p align="center">
+This library is a complete port of <a href="https://github.com/jameslyons/python_speech_features"> python_speech_features</a> in pure Kotlin. </p>
+<p align="center">
+It provides common speech features for Automated speech recognition (ASR) including MFCCs and filterbank energies. 
+<br>To know more about MFCCs <a href="http://www.practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/">read more</a>.
+
+<!-- This library is a  It can be used both in Android/java projects and iOS projects. -->
+</p>
+
+
+# 👨‍💻 Installation
+
+We support multiple platforms using Kotlin multiplatform. 
+
+<details>
+<summary> Android </summary>
 Add jitpack.io to your project's repositories:
 
 ```gradle
@@ -25,8 +58,23 @@ dependencies {
     implementation "org.merlyn.kotlinspeechfeatures:${version}"
 }
 ```
+</details>
 
-## Usage
+<details>
+	<summary> iOS </summary>
+
+	- Coming soon...
+
+</details>
+
+<details>
+	<summary> JavaScript </summary>
+
+ 	- Coming soon...
+
+</details>
+
+# 🙋 How to use
 Supported features:
 
 - Mel Frequency Cepstral Coefficients (mfcc)
@@ -52,7 +100,33 @@ A sample app is included in this repo to help understand the implementation.
 	```
 4. The result will contain a 2 dimensional matrix with the expected values.
 
-## Reference
+# ✍️ Contributing
+Interested in contributing to the library? Thank you so much for your interest!
+We are always looking for improvements to the project and contributions from open-source developers are greatly appreciated.
+
+1. Clone repo and create a new branch: 
+```
+git checkout https://github.com/merlynmind/kotlin_speech_features -b name_for_new_branch
+```
+2. Make changes and test
+3. Submit Pull Request with comprehensive description of changes
+
+# 🌟 Spread the word!
+If you want to say thank you and/or support active development of this library:
+
+- Add a GitHub Star to the project!
+- Tweet about the project on your Twitter!
+Tag @MerlynMind and/or #heyMerlnyn
+
+Thank you so much for your interest in growing the reach of our library!
+
+
+# 🧡 Credits
+- [Raquib-Ul Alam](https://github.com/alamkanak) - For major refactoring and making the code presentable
+- [Arjun Sunil](https://github.com/arjun921) - Original Author of kotlin speech features
+- [Rob Smith](https://github.com/robmsmt) - For Mentoring and helping us to navigate through the task
+
+# 📝 Reference
 
 - Original library - Python Speech Features: https://github.com/jameslyons/python_speech_features
 - Reference Library - Used as a reference for building parts of Kotlin Speech Features: https://github.com/Cwiiis/c_speech_features
