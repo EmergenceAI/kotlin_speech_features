@@ -152,9 +152,6 @@ class MathUtils {
         fun linspace(start: Double, stop: Double, num: Double) = Array(num.toInt()) { start + it * ((stop - start) / (num - 1)) }
 
         suspend fun dot2d(v1:Array<FloatArray>, v2: Array<FloatArray>): Array<FloatArray> {
-            //    v1: pspec : (2,257)
-            //    v2: fbT   : (257,26)
-
             val v2T = transpose(v2)
             val response : Array<FloatArray> = Array(v1.size) { FloatArray(v2[0].size)}
             for (i in v1.indices) {

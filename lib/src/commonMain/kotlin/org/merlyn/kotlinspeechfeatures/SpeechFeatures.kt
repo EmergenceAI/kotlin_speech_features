@@ -277,7 +277,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
         val feat = runBlocking { calcFeat(pspec2, fb) }
         val linSpace = linspace(1.0, sampleRate/2.0, pspec2[0].size.toDouble())
         val tiled = MathUtils.tile(linSpace.map { it.toFloat() }.toFloatArray(), pspec2.size, 1)
-        return runBlocking { dot2d(pspec2 * tiled, fb) / feat }
+        return runBlocking { dot2d(pspec2 * tiled, fb) / feat }.map { it.filter { it != 0f }.toFloatArray() }.toTypedArray()
     }
 
     /**
