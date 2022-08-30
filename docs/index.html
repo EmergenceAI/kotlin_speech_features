@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>lib</title>
+    <title>Kotlin Speech Features</title>
     <link href="images/logo-icon.svg" rel="icon" type="image/svg">
     <script>var pathToRoot = "";</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -27,7 +27,7 @@ if(savedDarkMode === true){
     <div id="leftToggler"><span class="icon-toggler"></span></div>
     <div class="library-name">
             <a href="index.html">
-                    <span>lib</span>
+                    <span>Kotlin Speech Features</span>
             </a>
     </div>
     <div>
@@ -46,13 +46,10 @@ if(savedDarkMode === true){
         <div id="sideMenu"></div>
     </div>
     <div id="main">
-<div class="main-content" id="content" pageIds="lib::////PointingToDeclaration//571099964">
+<div class="main-content" id="content" pageIds="Kotlin Speech Features::////PointingToDeclaration//571099964">
   <div class="breadcrumbs"></div>
   <div class="cover ">
-    <h1 class="cover"><span><span>lib</span></span></h1>
-    <div class="platform-hinted UnderCoverText with-platform-tabs" data-platform-hinted="data-platform-hinted">
-      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark jvm-like" data-filterable-current=":lib:dokkaHtml/androidMain" data-filterable-set=":lib:dokkaHtml/androidMain" data-active="" data-toggle=":lib:dokkaHtml/androidMain">android</button><button class="platform-bookmark common-like" data-filterable-current=":lib:dokkaHtml/commonMain" data-filterable-set=":lib:dokkaHtml/commonMain" data-toggle=":lib:dokkaHtml/commonMain">common</button></div>
-<div class="content sourceset-depenent-content" data-active="" data-togglable=":lib:dokkaHtml/androidMain"><p class="paragraph">This library provides common speech features for ASR including MFCCs and filterbank energies. If you are not sure what MFCCs are, and would like to know more have a look at this MFCC tutorial: http://www.practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/.</p><p class="paragraph">Supported features:</p><ul><li><p class="paragraph">Mel Frequency Cepstral Coefficients (mfcc)</p></li><li><p class="paragraph">Filterbank Energies (fbank)</p></li><li><p class="paragraph">Log Filterbank Energies (logfbank)</p></li><li><p class="paragraph">Spectral Subband Centroids (ssc)</p></li></ul><p class="paragraph">Example implementation:</p><p class="paragraph">A sample app is included in this repo to help understand the implementation.</p><ol><li><p class="paragraph">Convert your audio signal in the form of a float array. (A demo provided in the sample app)</p></li><li><p class="paragraph">Initialize speech features</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">private val speechFeatures = SpeechFeatures()</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li><li><p class="paragraph">Perform any of the 4 operations:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val result = speechFeatures.mfcc(MathUtils.normalize(wav), nFilt = 64)	<br>   val result = speechFeatures.fbank(MathUtils.normalize(wav), nFilt = 64)<br>   val result = speechFeatures.logfbank(MathUtils.normalize(wav), nFilt = 64)<br>   val result = speechFeatures.ssc(MathUtils.normalize(wav), nFilt = 64)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li><li><p class="paragraph">The result will contain a 2 dimensional matrix with the expected values.</p></li></ol><h2 class=""> Reference</h2><ul><li><p class="paragraph">Original library - Python Speech Features: https://github.com/jameslyons/python_speech_features</p></li><li><p class="paragraph">Reference Library - Used as a reference for building parts of Kotlin Speech Features: https://github.com/Cwiiis/c_speech_features</p></li><li><p class="paragraph">Sample english.wav was obtained from</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">wget http://voyager.jpl.nasa.gov/spacecraft/audio/english.au<br>  sox english.au -e signed-integer english.wav</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li></ul></div><div class="content sourceset-depenent-content" data-togglable=":lib:dokkaHtml/commonMain"><p class="paragraph">This library provides common speech features for ASR including MFCCs and filterbank energies. If you are not sure what MFCCs are, and would like to know more have a look at this MFCC tutorial: http://www.practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/.</p><p class="paragraph">Supported features:</p><ul><li><p class="paragraph">Mel Frequency Cepstral Coefficients (mfcc)</p></li><li><p class="paragraph">Filterbank Energies (fbank)</p></li><li><p class="paragraph">Log Filterbank Energies (logfbank)</p></li><li><p class="paragraph">Spectral Subband Centroids (ssc)</p></li></ul><p class="paragraph">Example implementation:</p><p class="paragraph">A sample app is included in this repo to help understand the implementation.</p><ol><li><p class="paragraph">Convert your audio signal in the form of a float array. (A demo provided in the sample app)</p></li><li><p class="paragraph">Initialize speech features</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">private val speechFeatures = SpeechFeatures()</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li><li><p class="paragraph">Perform any of the 4 operations:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val result = speechFeatures.mfcc(MathUtils.normalize(wav), nFilt = 64)	<br>   val result = speechFeatures.fbank(MathUtils.normalize(wav), nFilt = 64)<br>   val result = speechFeatures.logfbank(MathUtils.normalize(wav), nFilt = 64)<br>   val result = speechFeatures.ssc(MathUtils.normalize(wav), nFilt = 64)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li><li><p class="paragraph">The result will contain a 2 dimensional matrix with the expected values.</p></li></ol><h2 class=""> Reference</h2><ul><li><p class="paragraph">Original library - Python Speech Features: https://github.com/jameslyons/python_speech_features</p></li><li><p class="paragraph">Reference Library - Used as a reference for building parts of Kotlin Speech Features: https://github.com/Cwiiis/c_speech_features</p></li><li><p class="paragraph">Sample english.wav was obtained from</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">wget http://voyager.jpl.nasa.gov/spacecraft/audio/english.au<br>  sox english.au -e signed-integer english.wav</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li></ul></div>    </div>
+    <h1 class="cover"><span><span>Kotlin</span></span> <span><span>Speech</span></span> <span><span>Features</span></span></h1>
   </div>
   <h2 class="">Packages</h2>
   <div class="table"><a data-name="988410911%2FPackages%2F976670565" anchor-label="org.merlyn.kotlinspeechfeatures" id="988410911%2FPackages%2F976670565" data-filterable-set=":lib:dokkaHtml/commonMain"></a>
@@ -60,7 +57,7 @@ if(savedDarkMode === true){
       <div>
         <div class="main-subrow ">
           <div class=""><span class="inline-flex">
-              <div><a href="lib/org.merlyn.kotlinspeechfeatures/index.html">org.merlyn.kotlinspeechfeatures</a></div>
+              <div><a href="-kotlin -speech -features/org.merlyn.kotlinspeechfeatures/index.html">org.merlyn.kotlinspeechfeatures</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="988410911%2FPackages%2F976670565"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
@@ -78,7 +75,7 @@ if(savedDarkMode === true){
       <div>
         <div class="main-subrow ">
           <div class=""><span class="inline-flex">
-              <div><a href="lib/org.merlyn.kotlinspeechfeatures.fft/index.html">org.merlyn.kotlinspeechfeatures.fft</a></div>
+              <div><a href="-kotlin -speech -features/org.merlyn.kotlinspeechfeatures.fft/index.html">org.merlyn.kotlinspeechfeatures.fft</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="218134245%2FPackages%2F571099964"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>

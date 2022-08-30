@@ -5,7 +5,7 @@ plugins {
     id("org.jetbrains.dokka")
 }
 
-version = "1.0"
+version = "0.1.0"
 
 kotlin {
     android()
@@ -81,5 +81,6 @@ tasks.dokkaHtml.configure {
             }
         }
     }
+    moduleName.set("Kotlin Speech Features")
     outputDirectory.set(buildDir.resolve("dokka"))
 }
