@@ -7,7 +7,6 @@ import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.dct2withLifter
 import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.dot2d
 import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.floatArrayLog
 import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.linspace
-import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.transpose
 import org.merlyn.kotlinspeechfeatures.fft.FFT
 import org.merlyn.kotlinspeechfeatures.fft.KotlinFFT
 import kotlin.math.*
@@ -276,9 +275,9 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
         }.toTypedArray()
         val fb = getFilterBanks(nFilt, nfft, sampleRate, lowFreq, highFreq2)
         val feat = runBlocking { calcFeat(pspec2, fb) }
-        val x = linspace(1.0, sampleRate/2.0, pspec2[0].size.toDouble())
-        val r = MathUtils.tile(x.map { it.toFloat() }.toFloatArray(), pspec2.size, 1)
-        return runBlocking { dot2d(pspec2 * r, fb) / feat }
+        val linSpace = linspace(1.0, sampleRate/2.0, pspec2[0].size.toDouble())
+        val tiled = MathUtils.tile(linSpace.map { it.toFloat() }.toFloatArray(), pspec2.size, 1)
+        return runBlocking { dot2d(pspec2 * tiled, fb) / feat }
     }
 
     /**
