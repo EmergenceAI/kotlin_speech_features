@@ -1,0 +1,61 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft////PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex///PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/Complex/#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/-complex.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/abs/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/abs.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/conjugate/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/conjugate.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/cos/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/cos.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/divides/#org.merlyn.kotlinspeechfeatures.fft.Complex/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/divides.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/equals/#kotlin.Any?/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/equals.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/exp/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/exp.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/hashCode/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/hash-code.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/im/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/im.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/minus/#org.merlyn.kotlinspeechfeatures.fft.Complex/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/minus.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/phase/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/phase.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/plus/#org.merlyn.kotlinspeechfeatures.fft.Complex#org.merlyn.kotlinspeechfeatures.fft.Complex/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/plus.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/plus/#org.merlyn.kotlinspeechfeatures.fft.Complex/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/plus.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/re/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/re.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/reciprocal/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/reciprocal.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/scale/#kotlin.Double/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/scale.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/sin/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/sin.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/tan/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/tan.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/times/#org.merlyn.kotlinspeechfeatures.fft.Complex/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/times.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/Complex/toString/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-complex/to-string.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/FFT///PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-f-f-t/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/FFT/rfft/#kotlin.FloatArray#kotlin.Int/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-f-f-t/rfft.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/KotlinFFT///PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-kotlin-f-f-t/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/KotlinFFT/KotlinFFT/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-kotlin-f-f-t/-kotlin-f-f-t.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/KotlinFFT/rfft/#kotlin.FloatArray#kotlin.Int/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-kotlin-f-f-t/rfft.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/NoiseFFT///PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-noise-f-f-t/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/NoiseFFT/NoiseFFT/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-noise-f-f-t/-noise-f-f-t.html
+$dokka.location:org.merlyn.kotlinspeechfeatures.fft/NoiseFFT/rfft/#kotlin.FloatArray#kotlin.Int/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures.fft/-noise-f-f-t/rfft.html
+$dokka.location:org.merlyn.kotlinspeechfeatures////PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/MathUtils.Companion///PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-math-utils/-companion/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/MathUtils.Companion/normalize/#kotlin.IntArray/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-math-utils/-companion/normalize.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/MathUtils///PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-math-utils/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/MathUtils/MathUtils/#/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-math-utils/-math-utils.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SignalProc///PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-signal-proc/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SignalProc/SignalProc/#org.merlyn.kotlinspeechfeatures.fft.FFT/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-signal-proc/-signal-proc.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SignalProc/deframesig/#kotlin.Array[kotlin.FloatArray]#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Function1[kotlin.Int,kotlin.IntArray]/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-signal-proc/deframesig.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SignalProc/framesig/#kotlin.FloatArray#kotlin.Int#kotlin.Int#kotlin.FloatArray?#kotlin.Boolean/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-signal-proc/framesig.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SignalProc/logpowspec/#kotlin.Array[kotlin.FloatArray]#kotlin.Int#kotlin.Boolean/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-signal-proc/logpowspec.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SignalProc/magspec/#kotlin.Array[kotlin.FloatArray]#kotlin.Int/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-signal-proc/magspec.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SignalProc/powspec/#kotlin.Array[kotlin.FloatArray]#kotlin.Int/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-signal-proc/powspec.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SignalProc/preemphasis/#kotlin.FloatArray#kotlin.Float/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-signal-proc/preemphasis.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures///PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/index.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/SpeechFeatures/#org.merlyn.kotlinspeechfeatures.fft.FFT/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/-speech-features.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/delta/#kotlin.FloatArray#kotlin.Int/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/delta.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/fbank/#kotlin.FloatArray#kotlin.Int#kotlin.Float#kotlin.Float#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int?#kotlin.Float#kotlin.FloatArray?/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/fbank.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/getFilterBanks/#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int?/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/get-filter-banks.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/hz2mel/#kotlin.Double/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/hz2mel.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/hz2mel/#kotlin.DoubleArray/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/hz2mel.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/lifter/#kotlin.FloatArray#kotlin.Int/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/lifter.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/logfbank/#kotlin.FloatArray#kotlin.Int#kotlin.Float#kotlin.Float#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int?#kotlin.Float#kotlin.FloatArray?/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/logfbank.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/mel2hz/#kotlin.Double/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/mel2hz.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/mel2hz/#kotlin.DoubleArray/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/mel2hz.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/mfcc/#kotlin.FloatArray#kotlin.Int#kotlin.Float#kotlin.Float#kotlin.Int#kotlin.Int#kotlin.Int?#kotlin.Int#kotlin.Int?#kotlin.Float#kotlin.Int#kotlin.Boolean#kotlin.FloatArray?/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/mfcc.html
+$dokka.location:org.merlyn.kotlinspeechfeatures/SpeechFeatures/ssc/#kotlin.FloatArray#kotlin.Int#kotlin.Float#kotlin.Float#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int?#kotlin.Float#kotlin.FloatArray?/PointingToDeclaration/lib/org.merlyn.kotlinspeechfeatures/-speech-features/ssc.html
+org.merlyn.kotlinspeechfeatures
+org.merlyn.kotlinspeechfeatures.fft
+

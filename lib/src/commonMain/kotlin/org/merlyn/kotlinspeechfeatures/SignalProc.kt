@@ -3,6 +3,9 @@ package org.merlyn.kotlinspeechfeatures
 import kotlinx.coroutines.runBlocking
 import org.merlyn.kotlinspeechfeatures.fft.FFT
 import org.merlyn.kotlinspeechfeatures.fft.KotlinFFT
+import org.merlyn.kotlinspeechfeatures.internal.asyncForEachIndexed
+import org.merlyn.kotlinspeechfeatures.internal.tile
+import org.merlyn.kotlinspeechfeatures.internal.transpose
 import kotlin.math.*
 
 class SignalProc(private val fft: FFT = KotlinFFT()) {
@@ -117,7 +120,7 @@ class SignalProc(private val fft: FFT = KotlinFFT()) {
         }
         val arrange= (0..frameLen).map { it.toFloat() }.toFloatArray()
         val arrange2 = (0..numFrames).map { it * frameStep.toFloat() }.toFloatArray()
-        val indices = (MathUtils.tile(arrange, numFrames, 1) + MathUtils.transpose(MathUtils.tile(arrange2, frameLen, 1))).map {
+        val indices = (tile(arrange, numFrames, 1) + transpose(tile(arrange2, frameLen, 1))).map {
             it.map { it.roundToInt() }.toIntArray()
         }
         val padLen = (numFrames - 1) * frameStep + frameLen

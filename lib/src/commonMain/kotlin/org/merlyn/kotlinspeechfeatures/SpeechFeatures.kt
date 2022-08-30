@@ -1,14 +1,9 @@
 package org.merlyn.kotlinspeechfeatures
 
 import kotlinx.coroutines.runBlocking
-import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.calcEnergy
-import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.calcFeat
-import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.dct2withLifter
-import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.dot2d
-import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.floatArrayLog
-import org.merlyn.kotlinspeechfeatures.MathUtils.Companion.linspace
 import org.merlyn.kotlinspeechfeatures.fft.FFT
 import org.merlyn.kotlinspeechfeatures.fft.KotlinFFT
+import org.merlyn.kotlinspeechfeatures.internal.*
 import kotlin.math.*
 
 class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
@@ -276,7 +271,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
         val fb = getFilterBanks(nFilt, nfft, sampleRate, lowFreq, highFreq2)
         val feat = runBlocking { calcFeat(pspec2, fb) }
         val linSpace = linspace(1.0, sampleRate/2.0, pspec2[0].size.toDouble())
-        val tiled = MathUtils.tile(linSpace.map { it.toFloat() }.toFloatArray(), pspec2.size, 1)
+        val tiled = tile(linSpace.map { it.toFloat() }.toFloatArray(), pspec2.size, 1)
         return runBlocking { dot2d(pspec2 * tiled, fb) / feat }.map { it.filter { it != 0f }.toFloatArray() }.toTypedArray()
     }
 
@@ -287,7 +282,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
      * @param l the liftering coefficient to use. Default is 22. L <= 0 disables lifter.
      */
     fun lifter(cepstra: FloatArray, l: Int = 22): FloatArray {
-        return MathUtils.cepstralLifter(cepstra, 1, aNCep = 13, aCepLifter = l)
+        return cepstralLifter(cepstra, 1, aNCep = 13, aCepLifter = l)
     }
 
     /**

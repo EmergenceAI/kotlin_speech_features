@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("org.jetbrains.dokka")
 }
 
 version = "1.0"
@@ -66,4 +67,19 @@ android {
         minSdk = 27
         targetSdk = 32
     }
+}
+
+tasks.dokkaHtml.configure {
+    dokkaSourceSets {
+        configureEach {
+            // Include Markdown docs for toplevel and packages
+            includes.from("packages.md")
+
+            // Don't publish implementation details for any source sets
+            perPackageOption {
+                reportUndocumented.set(false)
+            }
+        }
+    }
+    outputDirectory.set(buildDir.resolve("dokka"))
 }
