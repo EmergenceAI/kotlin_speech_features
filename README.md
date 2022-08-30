@@ -1,6 +1,6 @@
 <div align='center'>
 
-<h1 align="left">
+<h1 align="center">
 Kotlin Speech Features
 </h1>
 
@@ -28,17 +28,25 @@ This library is a complete port of <a href="https://github.com/jameslyons/python
 <p align="center">
 It provides common speech features for Automated speech recognition (ASR) including MFCCs and filterbank energies. 
 <br>To know more about MFCCs <a href="http://www.practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/">read more</a>.
+	
+### Features
 
-<!-- This library is a  It can be used both in Android/java projects and iOS projects. -->
+- Mel Frequency Cepstral Coefficients (mfcc)
+- Filterbank Energies (fbank)
+- Log Filterbank Energies (logfbank)
+- Spectral Subband Centroids (ssc)
+
 </p>
 
 
-# 👨‍💻 Installation
+# 🙋 How to use
 
 We support multiple platforms using Kotlin multiplatform. 
 
 <details>
 <summary> Android </summary>
+	
+## Integration
 Add jitpack.io to your project's repositories:
 
 ```gradle
@@ -57,31 +65,9 @@ dependencies {
     implementation "org.merlyn.kotlinspeechfeatures:${version}"
 }
 ```
-</details>
+	
 
-<details>
-	<summary> iOS </summary>
-
-	- Coming soon...
-
-</details>
-
-<details>
-	<summary> JavaScript </summary>
-
- 	- Coming soon...
-
-</details>
-
-# 🙋 How to use
-Supported features:
-
-- Mel Frequency Cepstral Coefficients (mfcc)
-- Filterbank Energies (fbank)
-- Log Filterbank Energies (logfbank)
-- Spectral Subband Centroids (ssc)
-
-Example implementation:
+## Example implementation
 
 A sample app is included in this repo to help understand the implementation.
 
@@ -98,6 +84,25 @@ A sample app is included in this repo to help understand the implementation.
 	val result = speechFeatures.ssc(MathUtils.normalize(wav), nFilt = 64)
 	```
 4. The result will contain a 2 dimensional matrix with the expected values.
+	---
+</details>
+
+<details>
+	<summary> iOS </summary>
+
+	- Coming soon...
+	---
+</details>
+
+<details>
+	<summary> JavaScript </summary>
+
+ 	- Coming soon...
+	---
+</details>
+
+
+
 
 # ✍️ Contributing
 Interested in contributing to the library? Thank you so much for your interest!
