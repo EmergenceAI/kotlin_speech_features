@@ -112,7 +112,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
             val energy = calcEnergy(pspec) // stores the total energy in each frame.
             val fb = getFilterBanks(nFilt, nfft, sampleRate, lowFreq, highFreq)
             val feat = calcFeat(pspec, fb)
-            return@runBlocking feat to energy
+            return@runBlocking feat.map { it.filterIndexed { index, _ -> index < nFilt }.toFloatArray() }.toTypedArray() to energy
         }
         return Pair(feat, energy)
     }
@@ -155,7 +155,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
             preemph,
             winFunc
         )
-        return runBlocking { floatArrayLog(feat) }
+        return runBlocking { floatArrayLog(feat).map { it.filterIndexed { index, _ -> index < nFilt }.toFloatArray() }.toTypedArray() }
     }
 
     /**
