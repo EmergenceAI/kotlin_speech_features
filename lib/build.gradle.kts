@@ -15,13 +15,15 @@ kotlin {
 
     cocoapods {
         summary = "This library provides common speech features for ASR including MFCCs and filterbank energies."
-        homepage = "https://github.com/XioResearchInterGalactic/kotlin_speech_features"
+        homepage = "https://github.com/MerlynMind/kotlin_speech_features"
+        authors = "Raquib-ul Alam, Arjun Sunil, Rob Smith"
+        license = "MIT License"
         ios.deploymentTarget = "14.1"
         framework {
             baseName = "KotlinSpeechFeatures"
         }
     }
-    
+
     sourceSets {
         val commonMain by getting {
             dependencies {

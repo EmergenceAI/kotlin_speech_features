@@ -26,9 +26,9 @@ Kotlin Speech Features
 <p align="center">
 This library is a complete port of <a href="https://github.com/jameslyons/python_speech_features"> python_speech_features</a> in pure Kotlin. </p>
 <p align="center">
-It provides common speech features for Automated speech recognition (ASR) including MFCCs and filterbank energies. 
+It provides common speech features for Automated speech recognition (ASR) including MFCCs and filterbank energies.
 <br>To know more about MFCCs <a href="http://www.practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/">read more</a>.
-	
+
 ### Features
 
 - Mel Frequency Cepstral Coefficients (mfcc)
@@ -41,18 +41,18 @@ It provides common speech features for Automated speech recognition (ASR) includ
 
 # 🙋 How to use
 
-We support multiple platforms using Kotlin multiplatform. 
+We support multiple platforms using Kotlin multiplatform.
 
 <details>
 <summary> Android </summary>
-	
+
 ## Integration
 Add jitpack.io to your project's repositories:
 
 ```gradle
 allProjects {
   repositories {
-    google() 
+    google()
     maven { url "https://www.jitpack.io" }
   }
 }
@@ -65,7 +65,7 @@ dependencies {
     implementation "org.merlyn.kotlinspeechfeatures:${version}"
 }
 ```
-	
+
 
 ## Example implementation
 
@@ -78,7 +78,7 @@ A sample app is included in this repo to help understand the implementation.
 	```
 3. Perform any of the 4 operations:
 	```kotlin
-	val result = speechFeatures.mfcc(MathUtils.normalize(wav), nFilt = 64)	
+	val result = speechFeatures.mfcc(MathUtils.normalize(wav), nFilt = 64)
 	val result = speechFeatures.fbank(MathUtils.normalize(wav), nFilt = 64)
 	val result = speechFeatures.logfbank(MathUtils.normalize(wav), nFilt = 64)
 	val result = speechFeatures.ssc(MathUtils.normalize(wav), nFilt = 64)
@@ -90,8 +90,45 @@ A sample app is included in this repo to help understand the implementation.
 <details>
 	<summary> iOS </summary>
 
-	- Coming soon...
-	---
+
+## Integration
+
+1. In XCode, go to `File > Add Packages...`
+2. Paste in the URL of this repo in the search box
+3. Select the package found
+4. Click `Add Package` button
+
+
+## Example implementation
+
+A sample app is included in this repo to help understand the implementation.
+
+1. Convert your audio signal in the form of an `KotlinIntArray` and normalize it.
+   ```swift
+   import KotlinSpeechFeatures
+
+   let signal = [Int](1...1000) // Example signal
+   let normalized = MathUtils.Companion.init().normalize(sig: toKotlinIntArray(arr: signal))
+
+   func toKotlinIntArray(arr: [Int]) -> KotlinIntArray {
+       let result = KotlinIntArray(size: Int32(arr.capacity))
+       for i in 0...(arr.count-1) {
+           result.set(index: Int32(i), value: Int32(arr[i]))
+       }
+       return result
+   }
+   ```
+3. Initialize speech features
+   ```swift
+   private val speechFeatures = SpeechFeatures()
+   ```
+4. Perform any of the 4 operations:
+   ```swift
+   let result = speechFeatures.mfcc(signal: normalized, sampleRate: 16000, winLen: 0.025, winStep: 0.01, numCep: 13, nFilt: 64, nfft: 512, lowFreq: 0, highFreq: ni;, preemph: 0.97, ceplifter: 22, appendEnergy: true, winFunc: nil)
+   let result = speechFeatures.fbank(signal: normalized, sampleRate: 16000, winLen: 0.025, winStep: 0.01, nFilt: 64, nfft: 512, lowFreq: 0, highFreq: nil, preemph: 0.97, winFunc: nil)
+   let result = speechFeatures.logfbank(signal: normalized, sampleRate: 16000, winLen: 0.025, winStep: 0.01, nFilt: 64, nfft: 512, lowFreq: 0, highFreq: nil, preemph: 0.97, winFunc: nil)
+   let result = speechFeatures.ssc(signal: normalized, sampleRate: 16000, winLen: 0.025, winStep: 0.01, nFilt: 64, nfft: 512, lowFreq: 0, highFreq: nil, preemph: 0.97, winFunc: nil)
+   ```
 </details>
 
 <details>
@@ -108,7 +145,7 @@ A sample app is included in this repo to help understand the implementation.
 Interested in contributing to the library? Thank you so much for your interest!
 We are always looking for improvements to the project and contributions from open-source developers are greatly appreciated.
 
-1. Clone repo and create a new branch: 
+1. Clone repo and create a new branch:
 ```
 git checkout https://github.com/merlynmind/kotlin_speech_features -b name_for_new_branch
 ```
