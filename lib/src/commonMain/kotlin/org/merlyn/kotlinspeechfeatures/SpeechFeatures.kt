@@ -97,7 +97,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
         highFreq: Int? = null,
         preemph: Float = 0.97f,
         winFunc: FloatArray? = null
-    ): Pair<Array<FloatArray>, FloatArray> {
+    ): FBankResult {
         val premphSignal = signalProc.preemphasis(signal, preemph)
         val frameLen: Int = (winLen * sampleRate).toInt()
         val frameStep: Int = (winStep * sampleRate).toInt()
@@ -114,7 +114,7 @@ class SpeechFeatures(private val fft: FFT = KotlinFFT()) {
             val feat = calcFeat(pspec, fb)
             return@runBlocking feat.map { it.filterIndexed { index, _ -> index < nFilt }.toFloatArray() }.toTypedArray() to energy
         }
-        return Pair(feat, energy)
+        return FBankResult(feat, energy)
     }
 
     /**

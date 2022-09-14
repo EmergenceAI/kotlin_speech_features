@@ -43,7 +43,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             val wav = loadWavFile(fileFromAsset("audioSample", "english.wav"))
             val result = speechFeatures.fbank(MathUtils.normalize(wav), nFilt = 64)
             Log.d(TAG, "fbank output:")
-            result.first.forEach {
+            result.features.forEach {
                 Log.d(TAG, it.contentToString())
             }
         }

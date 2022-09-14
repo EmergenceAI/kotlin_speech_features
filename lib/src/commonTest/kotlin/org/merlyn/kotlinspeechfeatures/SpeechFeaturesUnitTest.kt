@@ -53,18 +53,18 @@ class SpeechFeaturesUnitTest {
         val actual = speechFeatures.fbank(testSignal)
 
         // Create expected outcome
-        val expectedFirst = arrayOf(
+        val expectedFeatures = arrayOf(
             arrayOf(2298.921f, 311.10876f, 152.31285f, 67.12247f, 39.30207f, 30.05849f, 22.423935f, 16.935686f, 13.367105f, 10.5317135f, 8.427468f, 6.8634996f, 5.7147827f, 4.7585073f, 4.251337f, 3.7752802f, 3.2025096f, 2.87203f, 2.6774952f, 2.4040322f, 2.2447147f, 2.113212f, 1.9997597f, 1.9740891f, 1.932159f, 1.9828026f).toFloatArray(),
             arrayOf(4555.343f, 596.0519f, 335.78638f, 126.56891f, 80.55956f, 65.094734f, 46.05628f, 34.20999f, 27.717323f, 21.930403f, 17.402672f, 13.871628f, 12.066126f, 9.681951f, 8.787187f, 7.8131785f, 6.582346f, 5.9373655f, 5.518313f, 4.9751644f, 4.6319866f, 4.3614173f, 4.1222634f, 4.0702105f, 3.9896345f, 4.101569f).toFloatArray(),
             arrayOf(7973.882f, 1026.2181f, 613.5945f, 216.85925f, 142.73843f, 118.170494f, 81.84967f, 60.37613f, 49.440704f, 39.18794f, 30.944258f, 24.517994f, 21.648146f, 17.160126f, 15.643236f, 13.919025f, 11.7027445f, 10.582053f, 9.815584f, 8.864576f, 8.243759f, 7.7665186f, 7.3348336f, 7.2446985f, 7.1026573f, 7.3057585f).toFloatArray(),
             arrayOf(12551.655f, 1602.2545f, 985.60834f, 337.7675f, 226.00249f, 189.24414f, 129.78133f, 95.41541f, 78.53052f, 62.297752f, 49.07801f, 38.77438f, 34.479446f, 27.174042f, 24.824114f, 22.09533f, 18.55945f, 16.801722f, 15.570019f, 14.072816f, 13.080274f, 12.326333f, 11.636815f, 11.495716f, 11.271474f, 11.596551f).toFloatArray(),
             arrayOf(19662.998f, 2045.6187f, 1197.8574f, 560.8656f, 327.6491f, 249.34653f, 175.75566f, 136.32768f, 112.83582f, 82.361435f, 68.0235f, 56.523926f, 45.990047f, 38.30514f, 34.44046f, 30.48569f, 25.894846f, 23.13611f, 21.757648f, 19.363194f, 18.220253f, 17.02291f, 16.174576f, 15.957283f, 15.595274f, 16.065346f).toFloatArray()
         )
-        val expectedSecond = arrayOf(19626.613f, 51626.34f, 100036.21f, 164862.12f, 201951.56f).toFloatArray()
+        val expectedEnergy = arrayOf(19626.613f, 51626.34f, 100036.21f, 164862.12f, 201951.56f).toFloatArray()
 
         // Assert
-        assert2DArrayEquals(expectedFirst, actual.first)
-        assertContentEquals(expectedSecond, actual.second)
+        assert2DArrayEquals(expectedFeatures, actual.features)
+        assertContentEquals(expectedEnergy, actual.energy)
     }
 
     @Test
