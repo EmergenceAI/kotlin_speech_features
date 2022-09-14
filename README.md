@@ -120,7 +120,7 @@ A sample app is included in this repo to help understand the implementation.
    ```
 3. Initialize speech features
    ```swift
-   private val speechFeatures = SpeechFeatures()
+   let speechFeatures = SpeechFeatures()
    ```
 4. Perform any of the 4 operations:
    ```swift
