@@ -163,8 +163,8 @@ Thank you so much for your interest in growing the reach of our library!
 
 
 # 🧡 Credits
-- [Raquib-Ul Alam](https://github.com/alamkanak) - For major refactoring and making the code presentable
 - [Arjun Sunil](https://github.com/arjun921) - Original Author of kotlin speech features
+- [Raquib-Ul Alam](https://github.com/alamkanak) - For major refactoring and making the code presentable
 - [Rob Smith](https://github.com/robmsmt) - For Mentoring and helping us to navigate through the task
 
 # 📝 Reference
