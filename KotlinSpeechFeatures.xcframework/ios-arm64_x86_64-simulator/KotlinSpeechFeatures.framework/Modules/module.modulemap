@@ -1,0 +1,6 @@
+framework module KotlinSpeechFeatures {
+    umbrella header "KotlinSpeechFeatures.h"
+
+    export *
+    module * { export * }
+}

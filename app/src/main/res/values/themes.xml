@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Kotlin_speech_features" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.KotlinSpeechFeatures" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +12,19 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.KotlinSpeechFeatures.ButtonTitle">
+        <item name="android:textColor">#fff</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontWeight">500</item>
+    </style>
+    <style name="Theme.KotlinSpeechFeatures.ButtonContent" parent="Theme.KotlinSpeechFeatures.ButtonTitle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:textStyle">normal</item>
     </style>
 </resources>

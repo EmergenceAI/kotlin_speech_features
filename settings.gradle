@@ -10,7 +10,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 }
-rootProject.name = "kotlin_speech_features"
+rootProject.name = "Kotlin Speech Features"
 include ':app'
+include ':lib'
