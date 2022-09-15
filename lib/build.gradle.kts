@@ -3,12 +3,11 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.dokka")
-    signing
     id("maven-publish")
 }
 
 group = "org.merlyn"
-version = "0.1.0"
+version = "0.0.1"
 
 kotlin {
     android {

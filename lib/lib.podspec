@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'lib'
-    spec.version                  = '0.1.0'
+    spec.version                  = '0.0.1'
     spec.homepage                 = 'https://github.com/MerlynMind/kotlin_speech_features'
     spec.source                   = { :http=> ''}
     spec.authors                  = 'Raquib-ul Alam, Arjun Sunil, Rob Smith'
