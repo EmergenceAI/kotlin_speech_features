@@ -120,3 +120,12 @@ afterEvaluate {
         }
     }
 }
+publishing {
+    publications {
+        withType<MavenPublication> {
+            groupId = libraryGroupName
+            artifactId = libraryArtifactName
+            version = libraryVersionName
+        }
+    }
+}
