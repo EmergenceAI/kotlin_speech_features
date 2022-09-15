@@ -5,7 +5,7 @@ Kotlin Speech Features
 </h1>
 
 
-<img src="https://img.shields.io/badge/version-0.1.0-FDD835?style=for-the-badge"></img><img src="https://img.shields.io/badge/Kotlin-1.7.10-blue?style=for-the-badge&logo=kotlin"></img><img src="https://img.shields.io/badge/license-MIT-chlorine?style=for-the-badge"></img>
+<img src="https://img.shields.io/badge/version-0.1.0-FDD835?style=for-the-badge"></img>	&nbsp; <img src="https://img.shields.io/badge/Kotlin-1.7.10-blue?style=for-the-badge&logo=kotlin"></img> &nbsp; <img src="https://img.shields.io/badge/license-MIT-chlorine?style=for-the-badge"></img> &nbsp; <img src="https://img.shields.io/jitpack/version/com.github.MerlynMind/kotlin_speech_features?style=for-the-badge"></img>
 
 <!-- <img style="background-color: white;" src="https://assets.website-files.com/627028e6193b2d840a066eab/627028e6193b2d86cd066ee0_MM%20Logo.svg" loading="lazy" > -->
 </center>
@@ -15,8 +15,8 @@ Kotlin Speech Features
 <h3 align="left">Quick Links</h3>
 
 
-<a href="https://merlyn.org"><img src="https://img.shields.io/badge/home-ff7300?style=for-the-badge"></a>
-<a href="https://merlyn.org"><img src="https://img.shields.io/badge/Docs-2196F3?style=for-the-badge"></a>
+<a href="https://merlyn.org"><img src="https://img.shields.io/badge/home-ff7300?style=for-the-badge"></a>	&nbsp;
+<a href="https://merlynmind.github.io/kotlin_speech_features/"><img src="https://img.shields.io/badge/Docs-2196F3?style=for-the-badge"></a>
 
 </div>
 
@@ -31,10 +31,10 @@ It provides common speech features for Automated speech recognition (ASR) includ
 
 ### Features
 
-- Mel Frequency Cepstral Coefficients (mfcc)
-- Filterbank Energies (fbank)
-- Log Filterbank Energies (logfbank)
-- Spectral Subband Centroids (ssc)
+- Mel Frequency Cepstral Coefficients (mfcc) - [Docs](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/mfcc.html)
+- Filterbank Energies (fbank) - [Docs](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/fbank.html)
+- Log Filterbank Energies (logfbank) - [Docs](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/logfbank.html)
+- Spectral Subband Centroids (ssc) - [Docs](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/ssc.html)
 
 </p>
 
@@ -53,7 +53,7 @@ Add jitpack.io to your project's repositories:
 allProjects {
   repositories {
     google()
-    maven { url "https://www.jitpack.io" }
+    maven { url 'https://jitpack.io' }
   }
 }
 ```
@@ -62,7 +62,7 @@ Add artifact to your project:
 
 ```gradle
 dependencies {
-    implementation "org.merlyn.kotlinspeechfeatures:${version}"
+    implementation "org.merlyn:kotlin_speech_features:${version}"
 }
 ```
 
@@ -134,8 +134,10 @@ A sample app is included in this repo to help understand the implementation.
 <details>
 	<summary> JavaScript </summary>
 
- 	- Coming soon...
-	---
+  ```
+  Coming soon...
+  ```
+
 </details>
 
 
