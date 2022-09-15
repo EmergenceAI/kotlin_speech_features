@@ -62,7 +62,7 @@ Add artifact to your project:
 
 ```gradle
 dependencies {
-    implementation "org.merlyn:kotlin_speech_features:${version}"
+    implementation "com.github.MerlynMind:kotlin_speech_features:${version}"
 }
 ```
 
@@ -83,8 +83,9 @@ A sample app is included in this repo to help understand the implementation.
 	val result = speechFeatures.logfbank(MathUtils.normalize(wav), nFilt = 64)
 	val result = speechFeatures.ssc(MathUtils.normalize(wav), nFilt = 64)
 	```
-4. The result will contain a 2 dimensional matrix with the expected values.
-	---
+4. The result will contain metrices with the expected features. Pass in these features for further processes (e.g. classification, speech recognition).
+
+  ---
 </details>
 
 <details>
@@ -118,17 +119,19 @@ A sample app is included in this repo to help understand the implementation.
        return result
    }
    ```
-3. Initialize speech features
+2. Initialize speech features
    ```swift
    let speechFeatures = SpeechFeatures()
    ```
-4. Perform any of the 4 operations:
+3. Perform any of the 4 operations:
    ```swift
    let result = speechFeatures.mfcc(signal: normalized, sampleRate: 16000, winLen: 0.025, winStep: 0.01, numCep: 13, nFilt: 64, nfft: 512, lowFreq: 0, highFreq: ni;, preemph: 0.97, ceplifter: 22, appendEnergy: true, winFunc: nil)
    let result = speechFeatures.fbank(signal: normalized, sampleRate: 16000, winLen: 0.025, winStep: 0.01, nFilt: 64, nfft: 512, lowFreq: 0, highFreq: nil, preemph: 0.97, winFunc: nil)
    let result = speechFeatures.logfbank(signal: normalized, sampleRate: 16000, winLen: 0.025, winStep: 0.01, nFilt: 64, nfft: 512, lowFreq: 0, highFreq: nil, preemph: 0.97, winFunc: nil)
    let result = speechFeatures.ssc(signal: normalized, sampleRate: 16000, winLen: 0.025, winStep: 0.01, nFilt: 64, nfft: 512, lowFreq: 0, highFreq: nil, preemph: 0.97, winFunc: nil)
    ```
+4. The result will contain metrices with the expected features. Pass in these features for further processes (e.g. classification, speech recognition).
+
 </details>
 
 <details>

@@ -6,7 +6,7 @@ plugins {
     id("maven-publish")
 }
 
-val libraryVersionName = "0.0.1"
+val libraryVersionName = "0.1.0"
 val libraryGroupName = "org.merlyn"
 val libraryArtifactName = "KotlinSpeechFeatures"
 
