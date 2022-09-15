@@ -3,12 +3,17 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.dokka")
+    signing
+    id("maven-publish")
 }
 
+group = "org.merlyn"
 version = "0.1.0"
 
 kotlin {
-    android()
+    android {
+        publishLibraryVariants("release", "debug")
+    }
     iosX64()
     iosArm64()
     iosSimulatorArm64()
