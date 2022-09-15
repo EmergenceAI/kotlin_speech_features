@@ -6,12 +6,16 @@ plugins {
     id("maven-publish")
 }
 
-group = "org.merlyn"
-version = "0.0.1"
+val libraryVersion = "0.0.1"
+val libraryGroup = "org.merlyn"
+val libraryArtifact = "KotlinSpeechFeatures"
+
+group = libraryGroup
+version = libraryVersion
 
 kotlin {
     android {
-        publishLibraryVariants("release", "debug")
+        publishLibraryVariants("release")
     }
     iosX64()
     iosArm64()
@@ -24,7 +28,7 @@ kotlin {
         license = "MIT License"
         ios.deploymentTarget = "14.1"
         framework {
-            baseName = "KotlinSpeechFeatures"
+            baseName = libraryArtifact
         }
     }
 
@@ -103,4 +107,14 @@ tasks.dokkaHtml.configure {
     }
     moduleName.set("Kotlin Speech Features")
     outputDirectory.set(buildDir.resolve("dokka"))
+}
+
+publishing {
+    publications {
+        withType<MavenPublication> {
+            groupId = libraryGroup
+            artifactId = libraryArtifact
+            version = libraryVersion
+        }
+    }
 }
