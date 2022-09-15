@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
     spec.authors                  = 'Raquib-ul Alam, Arjun Sunil, Rob Smith'
     spec.license                  = 'MIT License'
     spec.summary                  = 'This library provides common speech features for ASR including MFCCs and filterbank energies.'
-    spec.vendored_frameworks      = 'build/cocoapods/framework/KotlinSpeechFeatures.framework'
+    spec.vendored_frameworks      = 'KotlinSpeechFeatures.xcframework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target = '14.1'
 
