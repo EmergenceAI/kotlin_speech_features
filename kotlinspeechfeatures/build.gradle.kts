@@ -91,15 +91,15 @@ android {
         minSdk = 27
         targetSdk = 32
     }
+}
 
-    afterEvaluate {
-        publishing {
-            publications {
-                withType<MavenPublication> {
-                    groupId = libraryGroupName
-                    artifactId = libraryArtifactName
-                    version = libraryVersionName
-                }
+afterEvaluate {
+    publishing {
+        publications {
+            withType<MavenPublication> {
+                groupId = libraryGroupName
+                artifactId = libraryArtifactName
+                version = libraryVersionName
             }
         }
     }
