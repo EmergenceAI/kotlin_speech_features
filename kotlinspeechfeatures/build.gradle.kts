@@ -80,6 +80,11 @@ kotlin {
                     .matching { it.publication == targetPublication }
                     .configureEach { onlyIf { findProperty("isMainHost") == "true" } }
             }
+            withType<MavenPublication> {
+                groupId = libraryGroupName
+                artifactId = libraryArtifactName
+                version = libraryVersionName
+            }
         }
     }
 }
