@@ -1,3 +1,3 @@
 ./gradlew dokkaHtml
 rm -r docs
-mv lib/build/dokka docs
+mv kotlinspeechfeatures/build/dokka docs
