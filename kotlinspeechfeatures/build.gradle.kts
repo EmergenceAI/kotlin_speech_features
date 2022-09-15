@@ -91,6 +91,18 @@ android {
         minSdk = 27
         targetSdk = 32
     }
+
+    afterEvaluate {
+        publishing {
+            publications {
+                withType<MavenPublication> {
+                    groupId = libraryGroupName
+                    artifactId = libraryArtifactName
+                    version = libraryVersionName
+                }
+            }
+        }
+    }
 }
 
 tasks.dokkaHtml.configure {
@@ -107,25 +119,4 @@ tasks.dokkaHtml.configure {
     }
     moduleName.set("Kotlin Speech Features")
     outputDirectory.set(buildDir.resolve("dokka"))
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            withType<MavenPublication> {
-                groupId = libraryGroupName
-                artifactId = libraryArtifactName
-                version = libraryVersionName
-            }
-        }
-    }
-}
-publishing {
-    publications {
-        withType<MavenPublication> {
-            groupId = libraryGroupName
-            artifactId = libraryArtifactName
-            version = libraryVersionName
-        }
-    }
 }
