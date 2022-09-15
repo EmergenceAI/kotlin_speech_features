@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Kotlin Speech Features"
 include ':app'
-include ':lib'
+include ':kotlinspeechfeatures'

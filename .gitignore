@@ -16,3 +16,4 @@ local.properties
 /.idea
 .idea
 lib/build
+kotlinspeechfeatures/build
