@@ -8,7 +8,8 @@ plugins {
 
 val libraryVersionName = "0.1.0"
 val libraryGroupName = "com.github.MerlynMind"
-val libraryArtifactName = "kotlin_speech_features"
+val libraryArtifactNameAndroid = "kotlin_speech_features"
+val libraryArtifactNameIos = "KotlinSpeechFeatures"
 
 group = libraryGroupName
 version = libraryVersionName
@@ -28,7 +29,7 @@ kotlin {
         license = "MIT License"
         ios.deploymentTarget = "14.1"
         framework {
-            baseName = libraryArtifactName
+            baseName = libraryArtifactNameIos
         }
     }
 
@@ -82,12 +83,12 @@ kotlin {
             }
             withType<MavenPublication> {
                 groupId = libraryGroupName
-                artifactId = libraryArtifactName
+                artifactId = libraryArtifactNameAndroid
                 version = libraryVersionName
             }
             create<MavenPublication>("maven") {
                 groupId = libraryGroupName
-                artifactId = libraryArtifactName
+                artifactId = libraryArtifactNameAndroid
                 version = libraryVersionName
                 from(components["kotlin"])
             }
@@ -109,7 +110,7 @@ afterEvaluate {
         publications {
             withType<MavenPublication> {
                 groupId = libraryGroupName
-                artifactId = libraryArtifactName
+                artifactId = libraryArtifactNameAndroid
                 version = libraryVersionName
             }
         }

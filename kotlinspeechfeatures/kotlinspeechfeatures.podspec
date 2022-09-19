@@ -6,14 +6,14 @@ Pod::Spec.new do |spec|
     spec.authors                  = 'Raquib-ul Alam, Arjun Sunil, Rob Smith'
     spec.license                  = 'MIT License'
     spec.summary                  = 'This library provides common speech features for ASR including MFCCs and filterbank energies.'
-    spec.vendored_frameworks      = 'build/cocoapods/framework/KotlinSpeechFeatures.framework'
+    spec.vendored_frameworks      = 'build/cocoapods/framework/kotlin_speech_features.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target = '14.1'
 
 
     spec.pod_target_xcconfig = {
         'KOTLIN_PROJECT_PATH' => ':kotlinspeechfeatures',
-        'PRODUCT_MODULE_NAME' => 'KotlinSpeechFeatures',
+        'PRODUCT_MODULE_NAME' => 'kotlin_speech_features',
     }
 
     spec.script_phases = [
