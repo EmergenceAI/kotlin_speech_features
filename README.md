@@ -23,7 +23,7 @@ Kotlin Speech Features
 
 # 📒 Introduction
 <p align="center">
-This library is a complete port of <a href="https://github.com/jameslyons/python_speech_features"> python_speech_features</a> in pure Kotlin. </p>
+This library is a complete port of <a href="https://github.com/jameslyons/python_speech_features"> python_speech_features</a> in pure Kotlin available for Android and iOS projects. </p>
 <p align="center">
 It provides common speech features for Automated speech recognition (ASR) including MFCCs and filterbank energies.
 <br>To know more about MFCCs <a href="http://www.practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/">read more</a>.
