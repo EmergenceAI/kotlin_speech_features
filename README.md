@@ -5,10 +5,9 @@ Kotlin Speech Features
 </h1>
 
 
-<img src="https://img.shields.io/badge/version-0.1.0-FDD835?style=for-the-badge"></img>	&nbsp; <img src="https://img.shields.io/badge/Kotlin-1.7.10-blue?style=for-the-badge&logo=kotlin"></img> &nbsp; <img src="https://img.shields.io/badge/license-MIT-chlorine?style=for-the-badge"></img> &nbsp; <img src="https://img.shields.io/jitpack/version/com.github.MerlynMind/kotlin_speech_features?style=for-the-badge"></img>
+<img src="https://img.shields.io/github/v/release/MerlynMind/kotlin_speech_features?style=for-the-badge"></img>	&nbsp; <img src="https://img.shields.io/badge/Kotlin-1.7.10-blue?style=for-the-badge&logo=kotlin"></img> &nbsp; <img src="https://img.shields.io/badge/license-MIT-chlorine?style=for-the-badge"></img> &nbsp; <img src="https://img.shields.io/jitpack/version/com.github.MerlynMind/kotlin_speech_features?style=for-the-badge"></img>
 
 <!-- <img style="background-color: white;" src="https://assets.website-files.com/627028e6193b2d840a066eab/627028e6193b2d86cd066ee0_MM%20Logo.svg" loading="lazy" > -->
-</center>
 
 ---
 
@@ -58,7 +57,7 @@ allProjects {
 }
 ```
 
-Add artifact to your project:
+Add the dependency:
 
 ```gradle
 dependencies {
