@@ -7,8 +7,8 @@ plugins {
 }
 
 val libraryVersionName = "0.1.0"
-val libraryGroupName = "org.merlyn"
-val libraryArtifactName = "KotlinSpeechFeatures"
+val libraryGroupName = "com.github.MerlynMind"
+val libraryArtifactName = "kotlin_speech_features"
 
 group = libraryGroupName
 version = libraryVersionName
@@ -84,6 +84,12 @@ kotlin {
                 groupId = libraryGroupName
                 artifactId = libraryArtifactName
                 version = libraryVersionName
+            }
+            create<MavenPublication>("maven") {
+                groupId = libraryGroupName
+                artifactId = libraryArtifactName
+                version = libraryVersionName
+                from(components["kotlin"])
             }
         }
     }
