@@ -31,10 +31,10 @@ It provides common speech features for Automated speech recognition (ASR) includ
 
 ### Features
 
-- Mel Frequency Cepstral Coefficients (mfcc) - [Docs](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/mfcc.html)
-- Filterbank Energies (fbank) - [Docs](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/fbank.html)
-- Log Filterbank Energies (logfbank) - [Docs](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/logfbank.html)
-- Spectral Subband Centroids (ssc) - [Docs](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/ssc.html)
+- [Mel Frequency Cepstral Coefficients (mfcc)](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/mfcc.html)
+- [Filterbank Energies (fbank)](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/fbank.html)
+- [Log Filterbank Energies (logfbank)](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/logfbank.html)
+- [Spectral Subband Centroids (ssc)](https://merlynmind.github.io/kotlin_speech_features/-kotlin%20-speech%20-features/org.merlyn.kotlinspeechfeatures/-speech-features/ssc.html)
 
 </p>
 
@@ -172,12 +172,12 @@ Thank you so much for your interest in growing the reach of our library!
 - [Raquib-Ul Alam](https://github.com/alamkanak) - For major refactoring and making the code presentable
 - [Rob Smith](https://github.com/robmsmt) - For Mentoring and helping us to navigate through the task
 
-# 📝 Reference
+# 📝 References
 
-- Original library - Python Speech Features: https://github.com/jameslyons/python_speech_features
-- Reference Library - Used as a reference for building parts of Kotlin Speech Features: https://github.com/Cwiiis/c_speech_features
+- Original library - [Python Speech Features](https://github.com/jameslyons/python_speech_features)
+- Reference Library - [C Speech Features](https://github.com/Cwiiis/c_speech_features)
 - Sample english.wav was obtained from
-	```
-	wget http://voyager.jpl.nasa.gov/spacecraft/audio/english.au
-	sox english.au -e signed-integer english.wav
-	```
+```
+wget http://voyager.jpl.nasa.gov/spacecraft/audio/english.au
+sox english.au -e signed-integer english.wav
+```
